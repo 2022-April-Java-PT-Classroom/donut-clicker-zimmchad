@@ -14,11 +14,7 @@
   var multipliercount=0;
   var autoclick=0;
 
-  function timer(){
-    donutcount = donutcount + autoclick;
-    update();
-  }
-  setInterval(timer, 1000);
+
 </script>
 
 <html lang="en">
@@ -81,7 +77,7 @@
         }
       </script>
 
-      Want to purchase an auto clicker for 100 donuts?
+      Want to purchase an auto clicker (100 donuts for the first; 10% increase for each after)?
 
       <a href= # onclick="more()"><img src="https://www.bing.com/th/id/OGC.2d9b05b6ecf4f1322991fea3e5d83f54?pid=1.7&rurl=http%3a%2f%2fmadsenworld.dk%2fanigif%2ftext%2fclickher.gif&ehk=KSKRCXweY2hIb8dw21ZRM7JaVasFFagNUqNIKc3Xkko%3d" alt="autoclicker"></a>
       <br></br>
@@ -93,16 +89,23 @@
           autoclickercount = autoclickercount + 1;
           donutcount = donutcount - (90 + (autoclickercount*10));
           document.getElementById('totalautoclickers').value = autoclickercount;
+          function timer(){
+   
+          donutcount = donutcount + (autoclickercount*2) + (multipliercount*2);
+          update();
+         }
+          setInterval(timer, 1000);
           update()
             }
           }
+
           
         
       </script>
       auto clickers.
       <br></br>
 
-      Would you like to purchase a donut multiplier for 10 donuts?
+      Would you like to purchase a donut multiplier(10 donuts for the first; 10% increase for each after)?
       <a href= # onclick="multiply()"><img src="https://th.bing.com/th?q=X2+Cartoon&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.25&pid=InlineBlock&mkt=en-US&cc=US&setlang=en&adlt=moderate&t=1&mw=247" alt="double"></a>
       You have:
       <input type="text" id="multiplier" disable style>
@@ -117,20 +120,6 @@
         }
       </script>
       multipliers.
-
-
-
-
-
-      
-      <br></br>
-      <p>Use auto clicker</p>
-      <button><a href="a" onclick="useautoclicker"><img src="https://th.bing.com/th?q=Red+Missile+Launch+Button&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.25&pid=InlineBlock&mkt=en-US&cc=US&setlang=en&adlt=moderate&t=1&mw=247" alt="useautoclicker"></a></button>
-      <script>
-        function useautoclicker(){
-
-        }
-      </script>
       
 
 
