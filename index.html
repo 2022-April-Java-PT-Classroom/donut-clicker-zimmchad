@@ -1,13 +1,142 @@
 <!DOCTYPE html>
+<script>
+  function update(){
+    document.getElementById('text').value = donutcount;
+    document.title=donutcount + " Donuts";
+    document.getElementById('text').value=donutcount;
+    document.getElementById('totalautoclickers').value=autoclickercount;
+    
+
+  }
+
+  var donutcount=0;
+  var autoclickercount=0;
+  var multipliercount=0;
+  var autoclick=0;
+
+  function timer(){
+    donutcount = donutcount + autoclick;
+    update();
+  }
+  setInterval(timer, 1000);
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donut Clicker</title>
+    <link rel="stylesheet" href="style.css">
+    <title>0 Donuts</title>
   </head>
-  <body>
-    <div class="container"></div>
+
+  <body class="container">
+    <div>
+      <header class="menu">
+        <button class="about"><a href="https://en.wikipedia.org/wiki/Fred_the_Baker">Fred the Baker Baking Company</a></button>        
+        <button class="insp"><a href="https://orteil.dashnet.org/cookieclicker/">Based on Cookie Clicker</a></button>
+        <button class="contact"><a href=https://www.linkedin.com/in/chad-zimmerman-4b4b35220/>Chad Zimmerman</a></button>
+      </header>
+      <br></br>
+    </div>
+    <div>
+      <a href= # onclick="add()"><img src="https://th.bing.com/th?q=Happy+Donuts&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.25&pid=InlineBlock&mkt=en-US&cc=US&setlang=en&adlt=moderate&t=1&mw=247" alt="donut pic"></a>
+      <br></br>
+      You have: 
+      <input type="text" id="text" disabled style>
+      <script>
+        function add() {
+          donutcount = donutcount + 1
+          // document.getElementById('text').value = donutcount;
+          // document.title=donutcount + " Donuts";
+          update()
+
+        }
+      </script>
+      donuts.
+      <br></br>
+    
+
+      <!-- <button><a href="a" onclick="save()">Save</a></button>
+      <button><a href="a" onclick="load()">Load</a></button> -->
+
+      <script>
+        function save(){
+          localStorage.setItem("donutcount", donutcount);
+          localStorage.setItem("autoclickercount", autoclickercount)
+          localStorage.setItem("multipliercount", multipliercount)
+
+        }
+        function load(){
+          donutcount = localStorage.getItem("donutcount");
+          donutcount = parseInt(donutcount);
+          // document.getElementById('text').value=donutcount;
+          autoclickercount = localStorage.getItem("autoclickercount");
+          autoclickercount = parseInt(autoclickercount);
+          // document.getElementById('totalautoclickers').value=autoclickercount;
+          multipliercount = localStorage.getItem("multipliercount");
+          multipliercount = parseInt(multipliercount);
+          update()
+
+        }
+      </script>
+
+      Want to purchase an auto clicker for 100 donuts?
+
+      <a href= # onclick="more()"><img src="https://www.bing.com/th/id/OGC.2d9b05b6ecf4f1322991fea3e5d83f54?pid=1.7&rurl=http%3a%2f%2fmadsenworld.dk%2fanigif%2ftext%2fclickher.gif&ehk=KSKRCXweY2hIb8dw21ZRM7JaVasFFagNUqNIKc3Xkko%3d" alt="autoclicker"></a>
+      <br></br>
+      You have:
+      <input type="text" id="totalautoclickers" disable style>
+      <script>
+        function more(){
+          if(donutcount >= (autoclickercount*10) + 100){
+          autoclickercount = autoclickercount + 1;
+          donutcount = donutcount - (90 + (autoclickercount*10));
+          document.getElementById('totalautoclickers').value = autoclickercount;
+          update()
+            }
+          }
+          
+        
+      </script>
+      auto clickers.
+      <br></br>
+
+      Would you like to purchase a donut multiplier for 10 donuts?
+      <a href= # onclick="multiply()"><img src="https://th.bing.com/th?q=X2+Cartoon&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.25&pid=InlineBlock&mkt=en-US&cc=US&setlang=en&adlt=moderate&t=1&mw=247" alt="double"></a>
+      You have:
+      <input type="text" id="multiplier" disable style>
+      <script>
+        function multiply(){
+          if(donutcount >= (multipliercount*10) + 10){
+            multipliercount = multipliercount + 1;
+            donutcount = donutcount*.20;
+            document.getElementById('multiplier').value = multipliercount;
+            update()
+          }
+        }
+      </script>
+      multipliers.
+
+
+
+
+
+      
+      <br></br>
+      <p>Use auto clicker</p>
+      <button><a href="a" onclick="useautoclicker"><img src="https://th.bing.com/th?q=Red+Missile+Launch+Button&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.25&pid=InlineBlock&mkt=en-US&cc=US&setlang=en&adlt=moderate&t=1&mw=247" alt="useautoclicker"></a></button>
+      <script>
+        function useautoclicker(){
+
+        }
+      </script>
+      
+
+
+  
     <script src="./index.js"></script>
+    </div>
   </body>
+  
 </html>
