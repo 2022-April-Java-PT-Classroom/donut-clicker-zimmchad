@@ -1,0 +1,29 @@
+* {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  }
+
+  .container{
+      background-color: aliceblue;
+  }
+
+  .menu{
+      background-image: url(https://th.bing.com/th/id/OIP.neaj9jal0iWcAGZ0pcXYAQHaEo?w=295&h=184&c=7&r=0&o=5&dpr=1.25&pid=1.7);
+  }
+
+  body{
+      color: navy;
+  }
+  
+
+header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+
+
